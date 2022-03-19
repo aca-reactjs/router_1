@@ -1,0 +1,10 @@
+.link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: rgb(216, 112, 147);
+}
+
+.link:hover {
+  color: rgb(216, 112, 147, 0.6);
+}

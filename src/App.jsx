@@ -2,6 +2,7 @@ import { Link, Outlet, Route, Routes } from "react-router-dom";
 import { MainLayout } from "./components";
 import Countries from "./pages/Countries";
 import Country from "./pages/Country";
+import Favorites from "./pages/Favorites";
 import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 
@@ -14,7 +15,7 @@ export default function App() {
           <Route path="countries" element={<Countries />} />
           <Route path="countries/:code" element={<Country />} />
         </Route>
-
+        <Route path="favorites" element={<Favorites />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

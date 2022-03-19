@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
+import { CountryList } from "../components";
 
 export default function Countries() {
-  const [countries, setCountries] = useState([]);
-  console.log(`🐞 / Countries / countries`, countries);
-  const navigate = useNavigate();
-
-  const handleListItemClick = (code) => () => {
-    navigate(code.toLowerCase());
-  };
+  const [countries, setCountries] = useState();
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -16,15 +11,9 @@ export default function Countries() {
       .then((res) => setCountries(res));
   }, []);
 
-  return (
-    <div>
-      <ul>
-        {countries.map((country) => (
-          <li onClick={handleListItemClick(country.cca2)} key={country.cca2}>
-            {country.name.common}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  return !countries ? (
+    <div>loading</div>
+  ) : countries?.length ? (
+    <CountryList countries={countries} />
+  ) : null;
 }
