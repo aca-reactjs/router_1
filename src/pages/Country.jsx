@@ -50,7 +50,17 @@ export default function Country() {
   };
 
   return country ? (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        padding: "2rem",
+        marginTop: 16,
+      }}
+    >
+      <img src={country.flags.svg} alt="flag" width={200} height={200} />
       <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
         <h3>name: {country.name.common}</h3>
         <label
@@ -74,7 +84,6 @@ export default function Country() {
       </div>
       <p>population: {country.population}</p>
       <p>capital city: {country.capital[0]}</p>
-      <img src={country.flags.svg} alt="flag" width={500} height={500} />
     </div>
   ) : null;
 }
