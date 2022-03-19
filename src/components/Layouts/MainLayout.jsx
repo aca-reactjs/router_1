@@ -1,12 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
+import Navigation from "../Navigation/Navigation";
 
-export default function Layout() {
+export default function MainLayout() {
   return (
     <div>
-      <nav>
-        <Link to="/">home page</Link>{" "}
-        <Link to="users">users</Link>
-      </nav>
+      <Navigation />
       <div className="content">
         <Outlet />
       </div>
