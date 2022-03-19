@@ -12,7 +12,7 @@ export default function Country() {
 
   function isCountryAdded() {
     const list = JSON.parse(localStorage.getItem(favorites));
-    return !!list.find((item) => item === country.cca2);
+    return !!list?.find((item) => item === country.cca2);
   }
 
   useEffect(() => {
